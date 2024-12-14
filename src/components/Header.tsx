@@ -6,13 +6,6 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/placeholder.svg?text=CD" 
-              alt="CodeDex Logo" 
-              width={32} 
-              height={32}
-              className="pixelated"
-            />
             <span className="text-lg text-[#FFD700] font-bold">CodeDex</span>
           </Link>
           

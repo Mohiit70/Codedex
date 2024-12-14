@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    document.body.style.zoom = "80%"
+    document.body.style.zoom = "90%"
     
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
