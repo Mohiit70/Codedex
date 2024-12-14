@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Pixelated images */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #FFD700;
+  color: black;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000033;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border: 2px solid #000033;
+}
+
+/* Global styles */
+body {
+  background-color: #000033;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles */
+button, .button {
+  background-color: #FFD700;
+  color: #000033;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+  background-color: #FFA500;
+}
+
+/* Table styles */
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+th, td {
+  padding: 10px;
+  border: 2px solid #FFD700;
+}
+
+th {
+  background-color: #FFD700;
+  color: #000033;
+}
+
+/* Code block styles */
+pre {
+  background-color: #000000;
+  border: 2px solid #FFD700;
+  padding: 15px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
