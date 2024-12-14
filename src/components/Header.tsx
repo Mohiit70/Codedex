@@ -1,58 +1,39 @@
 import { Link } from 'react-router-dom'
 
-export default function Footer() {
+export default function Header() {
   return (
-    <footer className="bg-[#000044] border-t-4 border-[#FFD700] py-8">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-6">
-          <img 
-            src="/placeholder.svg?text=Visitor+Counter" 
-            alt="Visitor Counter" 
-            width={150} 
-            height={30}
-            className="inline-block pixelated"
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <h3 className="text-[#FFD700] mb-4 font-bold">NAVIGATION</h3>
-            <div className="space-y-2">
-              <Link to="/html" className="block text-white hover:text-[#FFD700]">HTML</Link>
-              <Link to="/css" className="block text-white hover:text-[#FFD700]">CSS</Link>
-              <Link to="/javascript" className="block text-white hover:text-[#FFD700]">JavaScript</Link>
-              <Link to="/python" className="block text-white hover:text-[#FFD700]">Python</Link>
-            </div>
+    <header className="bg-[#000044] border-b-4 border-[#FFD700]">
+      <nav className="container mx-auto px-4 py-2">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/placeholder.svg?text=CD" 
+              alt="CodeDex Logo" 
+              width={32} 
+              height={32}
+              className="pixelated"
+            />
+            <span className="text-lg text-[#FFD700] font-bold">CodeDex</span>
+          </Link>
+          
+          <div className="hidden md:flex space-x-4">
+            <Link to="/html" className="text-white hover:text-[#FFD700] transition-colors text-sm">HTML</Link>
+            <Link to="/css" className="text-white hover:text-[#FFD700] transition-colors text-sm">CSS</Link>
+            <Link to="/javascript" className="text-white hover:text-[#FFD700] transition-colors text-sm">JS</Link>
+            <Link to="/python" className="text-white hover:text-[#FFD700] transition-colors text-sm">PY</Link>
+            <Link to="/team" className="text-white hover:text-[#FFD700] transition-colors text-sm">TEAM</Link>
+            <Link to="/contact" className="text-white hover:text-[#FFD700] transition-colors text-sm">CONTACT</Link>
           </div>
-          <div>
-            <h3 className="text-[#FFD700] mb-4 font-bold">CONNECT</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-white hover:text-[#FFD700]">Discord</a>
-              <a href="#" className="block text-white hover:text-[#FFD700]">Twitter</a>
-              <a href="#" className="block text-white hover:text-[#FFD700]">GitHub</a>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-[#FFD700] mb-4 font-bold">NEWSLETTER</h3>
-            <form className="space-y-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-2 bg-[#000033] border-2 border-[#FFD700] text-white"
-              />
-              <button
-                type="submit"
-                className="w-full p-2 bg-[#FFD700] text-black hover:bg-yellow-400 transition-colors font-bold"
-              >
-                SUBSCRIBE
-              </button>
-            </form>
-          </div>
+
+          <Link 
+            to="/courses"
+            className="px-3 py-1 bg-[#FFD700] text-black hover:bg-yellow-400 transition-colors font-bold text-sm"
+          >
+            START CODING
+          </Link>
         </div>
-        <div className="text-center text-sm text-white">
-          Made with 💛 in the 90s style • © 2024 CodeDex
-        </div>
-      </div>
-    </footer>
+      </nav>
+    </header>
   )
 }
 
