@@ -5,16 +5,13 @@ export default function VisitorCounter() {
 
   useEffect(() => {
     const storedCount = localStorage.getItem('visitorCount')
-    if (storedCount) {
-      setCount(parseInt(storedCount, 10))
-    } else {
-      setCount(1)
-    }
-    localStorage.setItem('visitorCount', (count + 1).toString())
+    const newCount = storedCount ? parseInt(storedCount, 10) + 1 : 1
+    setCount(newCount)
+    localStorage.setItem('visitorCount', newCount.toString())
   }, [])
 
   return (
-    <div className="bg-black inline-block p-2 border-2 border-[#00FFFF]">
+    <div className="bg-black inline-block p-2 border-2 border-[#00FFFF] shadow-lg">
       <span className="text-[#00FFFF] font-bold">Visitors: </span>
       <span className="text-[#FF00FF] font-bold">{count.toString().padStart(6, '0')}</span>
     </div>

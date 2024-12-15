@@ -16,6 +16,7 @@ export default function Header() {
             <Link to="/python" className="text-white hover:text-[#FFD700] transition-colors text-sm">PY</Link>
             <Link to="/team" className="text-white hover:text-[#FFD700] transition-colors text-sm">TEAM</Link>
             <Link to="/contact" className="text-white hover:text-[#FFD700] transition-colors text-sm">CONTACT</Link>
+            <Link to="/guestbook" className="text-white hover:text-[#FFD700] transition-colors text-sm">GUESTBOOK</Link>
           </div>
 
           <Link 

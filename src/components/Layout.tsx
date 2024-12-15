@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 import MovingAlert from './MovingAlert'
+import VisitorCounter from './VisitorCounter'
+import SoundEffect from './SoundEffect'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate()
@@ -28,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-[#000033] text-white font-['Press_Start_2P'] relative overflow-hidden">
+      <SoundEffect />
       <div className="stars absolute inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
@@ -48,6 +51,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="container mx-auto px-4 py-8 relative">
         {children}
       </main>
+      <div className="fixed bottom-4 right-4 z-50">
+        <VisitorCounter />
+      </div>
       <Footer />
       <MovingAlert />
     </div>
