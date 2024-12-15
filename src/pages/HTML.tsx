@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import { Link } from 'react-router-dom'
 
 export default function HTMLPage() {
   return (
@@ -55,14 +56,26 @@ export default function HTMLPage() {
           </table>
         </div>
 
-        <div className="text-center">
+        <div className="text-center mb-8">
           <img
-            src="/placeholder.svg?text=HTML+is+Awesome!"
-            alt="HTML is Awesome"
-            width={300}
-            height={200}
-            className="pixelated inline-block"
+            src="https://i.imgflip.com/9dtw31.jpg"
+            alt="HTML is Awesome Meme"
+            className="inline-block max-w-full h-auto"
           />
+          <div className="mt-2 text-sm text-gray-400">
+            <a href="https://imgflip.com/memegenerator" className="hover:underline">from Imgflip Meme Generator</a>
+          </div>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link 
+            to="https://www.codedex.io/html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block bg-[#FFD700] text-black px-6 py-3 rounded-full hover:bg-yellow-400 transition-colors"
+          >
+            View More HTML Content on Codedex.io
+          </Link>
         </div>
       </div>
     </Layout>

@@ -5,55 +5,46 @@ const teamMembers = [
     name: 'Sonny',
     role: 'Founder & Chief Vibes Officer',
     image: '/images/team/sonny_avatar.png',
-    socials: ['twitter', 'linkedin'],
   },
   {
     name: 'Dharma',
     role: 'Founding Engineer',
     image: '/images/team/dharma_avatar.png',
-    socials: ['github', 'twitter'],
   },
   {
     name: 'Asiqur',
     role: 'Software Engineer',
     image: '/images/team/asiqur_animated.png',
-    socials: ['twitter'],
   },
   {
     name: 'Lillian',
     role: 'Head of Operations',
     image: '/images/team/lil_animated.png',
-    socials: ['linkedin'],
   },
   {
     name: 'Naomi',
     role: 'Social Media Manager',
     image: '/images/team/naomi_animated.png',
-    socials: ['twitter', 'instagram'],
   },
   {
     name: 'Eric',
     role: 'Community Manager',
     image: '/images/team/eric_animated.png',
-    socials: ['linkedin'],
   },
   {
     name: 'Ellie',
     role: 'Curriculum Developer',
     image: '/images/team/ellie_animated.png',
-    socials: ['linkedin', 'twitter'],
   },
   {
     name: 'Jackie',
     role: 'Sr. Product Designer',
     image: '/images/team/jackie_animated.webp',
-    socials: ['dribbble', 'linkedin'],
   },
   {
     name: 'Colin',
     role: 'Email Marketing Associate',
     image: '/images/team/colin_animated.webp',
-    socials: ['linkedin'],
   },
 ];
 
@@ -93,26 +84,6 @@ export default function TeamPage() {
 
               <h3 className="text-xl text-[#FFD700] mb-2">{member.name}</h3>
               <p className="text-sm text-gray-300 mb-4">{member.role}</p>
-
-              <div className="flex justify-center space-x-4">
-                {member.socials.map((social) => (
-                  <a
-                    key={social}
-                    href={`https://${social}.com`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transform hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src={`/images/social/${social}.png`}
-                      alt={social}
-                      width={24}
-                      height={24}
-                      className="pixelated"
-                    />
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         ))}
@@ -120,3 +91,4 @@ export default function TeamPage() {
     </Layout>
   );
 }
+

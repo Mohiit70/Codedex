@@ -9,7 +9,6 @@ export default function ContactPage() {
     setFormState('sending')
     setTimeout(() => {
       setFormState('sent')
-      // Reset form after 2 seconds
       setTimeout(() => setFormState('idle'), 2000)
     }, 1000)
   }
@@ -21,8 +20,8 @@ export default function ContactPage() {
           <h1 className="text-4xl text-[#FFD700] mb-4">CONTACT US</h1>
           <div className="animate-bounce">
             <img
-              src="/placeholder.svg?text=EMAIL"
-              alt="Email Icon"
+              src="/images/mail-icon.gif"
+              alt="Mail Icon"
               width={64}
               height={64}
               className="mx-auto pixelated"
@@ -71,33 +70,12 @@ export default function ContactPage() {
               </button>
             </div>
           </form>
-
-          <div className="mt-8 text-center">
-            <p className="text-gray-400 mb-4">- OR -</p>
-            <div className="flex justify-center space-x-6">
-              {['Discord', 'Twitter', 'GitHub'].map(platform => (
-                <a
-                  key={platform}
-                  href="#"
-                  className="transform hover:scale-110 transition-transform"
-                >
-                  <img
-                    src={`/placeholder.svg?text=${platform}`}
-                    alt={platform}
-                    width={32}
-                    height={32}
-                    className="pixelated"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="mt-8 text-center">
           <div className="inline-block border-2 border-yellow-500 p-4 bg-black">
             <p className="text-yellow-500 animate-pulse">
-              📍 Made with 💛 in Brooklyn
+              Made with passion in Brooklyn
             </p>
           </div>
         </div>
