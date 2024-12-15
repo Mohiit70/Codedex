@@ -18,14 +18,15 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl text-[#FFD700] mb-4">CONTACT US</h1>
-          <div className="animate-bounce">
-            <img
-              src="/images/mail-icon.gif"
-              alt="Mail Icon"
-              width={64}
-              height={64}
-              className="mx-auto pixelated"
-            />
+          <div className="animate-bounce flex justify-center items-center">
+            {/* Mail emoji with fun animation */}
+            <span 
+              role="img" 
+              aria-label="mail" 
+              className="text-6xl animate-wiggle"
+            >
+              📬
+            </span>
           </div>
         </div>
 
@@ -83,4 +84,3 @@ export default function ContactPage() {
     </Layout>
   )
 }
-
