@@ -1,31 +1,61 @@
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const teamMembers = [
   {
     name: 'Sonny',
     role: 'Founder & Chief Vibes Officer',
-    image: '/placeholder.svg?text=Sonny',
-    socials: ['twitter', 'instagram', 'github', 'youtube']
+    image: '/images/team/sonny_avatar.png',
+    socials: ['twitter', 'linkedin'],
   },
   {
     name: 'Dharma',
     role: 'Founding Engineer',
-    image: '/placeholder.svg?text=Dharma',
-    socials: ['twitter', 'github', 'linkedin']
+    image: '/images/team/dharma_avatar.png',
+    socials: ['github', 'twitter'],
   },
   {
     name: 'Asiqur',
     role: 'Software Engineer',
-    image: '/placeholder.svg?text=Asiqur',
-    socials: ['twitter', 'github', 'linkedin']
+    image: '/images/team/asiqur_animated.png',
+    socials: ['twitter'],
   },
   {
-    name: 'Gillian',
+    name: 'Lillian',
     role: 'Head of Operations',
-    image: '/placeholder.svg?text=Gillian',
-    socials: ['twitter', 'linkedin', 'youtube']
+    image: '/images/team/lil_animated.png',
+    socials: ['linkedin'],
   },
-]
+  {
+    name: 'Naomi',
+    role: 'Social Media Manager',
+    image: '/images/team/naomi_animated.png',
+    socials: ['twitter', 'instagram'],
+  },
+  {
+    name: 'Eric',
+    role: 'Community Manager',
+    image: '/images/team/eric_animated.png',
+    socials: ['linkedin'],
+  },
+  {
+    name: 'Ellie',
+    role: 'Curriculum Developer',
+    image: '/images/team/ellie_animated.png',
+    socials: ['linkedin', 'twitter'],
+  },
+  {
+    name: 'Jackie',
+    role: 'Sr. Product Designer',
+    image: '/images/team/jackie_animated.webp',
+    socials: ['dribbble', 'linkedin'],
+  },
+  {
+    name: 'Colin',
+    role: 'Email Marketing Associate',
+    image: '/images/team/colin_animated.webp',
+    socials: ['linkedin'],
+  },
+];
 
 export default function TeamPage() {
   return (
@@ -35,19 +65,18 @@ export default function TeamPage() {
           MEET THE TEAM
         </h1>
         <p className="text-lg text-gray-300">
-          The folks behind CodeDex have taught Computer Science at
-          Columbia, NYU, CUNY, and popular EdTech platforms.
+          The folks behind CodeDex have taught Computer Science at Columbia, NYU, CUNY, and popular EdTech platforms.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {teamMembers.map((member, index) => (
-          <div 
+          <div
             key={member.name}
             className="relative group"
-            style={{ 
+            style={{
               animation: 'fadeIn 0.5s ease-out',
-              animationDelay: `${index * 0.1}s`
+              animationDelay: `${index * 0.1}s`,
             }}
           >
             <div className="bg-[#000044] p-4 border-4 border-[#FFD700] transform group-hover:scale-105 transition-transform">
@@ -61,19 +90,21 @@ export default function TeamPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000044] to-transparent opacity-50" />
               </div>
-              
+
               <h3 className="text-xl text-[#FFD700] mb-2">{member.name}</h3>
               <p className="text-sm text-gray-300 mb-4">{member.role}</p>
-              
+
               <div className="flex justify-center space-x-4">
-                {member.socials.map(social => (
+                {member.socials.map((social) => (
                   <a
                     key={social}
-                    href="#"
+                    href={`https://${social}.com`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="transform hover:scale-110 transition-transform"
                   >
                     <img
-                      src={`/placeholder.svg?text=${social}`}
+                      src={`/images/social/${social}.png`}
                       alt={social}
                       width={24}
                       height={24}
@@ -86,24 +117,6 @@ export default function TeamPage() {
           </div>
         ))}
       </div>
-
-      <div className="mt-16 text-center">
-        <h2 className="text-2xl text-[#FFD700] mb-8">BACKED BY</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {['Worklife', 'Hustle Fund', 'Transcend', 'Fellows'].map(company => (
-            <div key={company} className="flex items-center justify-center">
-              <img
-                src={`/placeholder.svg?text=${company}`}
-                alt={company}
-                width={150}
-                height={50}
-                className="opacity-50 hover:opacity-100 transition-opacity"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
     </Layout>
-  )
+  );
 }
-

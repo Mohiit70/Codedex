@@ -7,6 +7,7 @@ import Python from './pages/Python'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
 import Courses from './pages/Courses'
+import UnderConstruction from './pages/UnderConstruction'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/under-construction" element={<UnderConstruction />} />
       </Routes>
     </Router>
   )

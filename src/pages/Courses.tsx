@@ -1,4 +1,5 @@
-import Layout from '../components/Layout'
+import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 const courses = [
   {
@@ -36,9 +37,9 @@ const courses = [
     level: 'BEGINNER',
     category: 'Data Science'
   }
-]
+];
 
-const categories = ['Popular', 'Web Development', 'Data Science', 'Tools']
+const categories = ['Popular', 'Web Development', 'Data Science', 'Tools'];
 
 export default function CoursesPage() {
   return (
@@ -53,7 +54,7 @@ export default function CoursesPage() {
       </div>
 
       <div className="mb-8 flex justify-center space-x-4">
-        {categories.map(category => (
+        {categories.map((category) => (
           <button
             key={category}
             className="px-4 py-2 rounded-full border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-colors"
@@ -78,22 +79,25 @@ export default function CoursesPage() {
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 pixelated"
                 />
               </div>
-              
+
               <div className="p-6">
                 <div className="text-sm text-gray-400 mb-2">COURSE</div>
                 <h3 className="text-2xl text-[#FFD700] mb-2">{course.title}</h3>
                 <p className="text-gray-300 mb-4">{course.description}</p>
-                
+
                 <div className="flex items-center justify-between">
                   <span className="text-sm bg-black px-3 py-1 text-[#FFD700]">
                     {course.level}
                   </span>
-                  <button className="text-[#FFD700] group-hover:translate-x-2 transition-transform">
+                  <Link
+                    to="/under-construction"
+                    className="text-[#FFD700] group-hover:translate-x-2 transition-transform"
+                  >
                     Start Course →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -102,11 +106,14 @@ export default function CoursesPage() {
       </div>
 
       <div className="mt-16 text-center">
-        <button className="px-8 py-4 bg-[#FFD700] text-black text-xl hover:bg-yellow-400 transition-colors transform hover:scale-105">
+        <Link
+          to="/under-construction"
+          className="px-8 py-4 bg-[#FFD700] text-black text-xl hover:bg-yellow-400 transition-colors transform hover:scale-105 inline-block"
+        >
           View All Courses
-        </button>
+        </Link>
       </div>
     </Layout>
-  )
+  );
 }
 
