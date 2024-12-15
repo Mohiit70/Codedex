@@ -9,6 +9,7 @@ export default function ContactPage() {
     setFormState('sending')
     setTimeout(() => {
       setFormState('sent')
+      // Reset form after 2 seconds
       setTimeout(() => setFormState('idle'), 2000)
     }, 1000)
   }
@@ -18,16 +19,6 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl text-[#FFD700] mb-4">CONTACT US</h1>
-          <div className="animate-bounce flex justify-center items-center">
-            {/* Mail emoji with fun animation */}
-            <span 
-              role="img" 
-              aria-label="mail" 
-              className="text-6xl animate-wiggle"
-            >
-              📬
-            </span>
-          </div>
         </div>
 
         <div className="bg-[#000044] border-4 border-[#FFD700] p-8">
@@ -84,3 +75,4 @@ export default function ContactPage() {
     </Layout>
   )
 }
+
