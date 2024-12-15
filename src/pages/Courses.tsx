@@ -5,35 +5,35 @@ const courses = [
   {
     title: 'Python',
     description: 'Learn programming fundamentals such as variables, control flow, and loops with the most popular language.',
-    image: '/placeholder.svg?text=Python',
+    image: '/images/Python-Logo-1997.png',
     level: 'BEGINNER',
     category: 'Popular'
   },
   {
     title: 'HTML',
     description: 'Create your first website with HTML, the building blocks of the web.',
-    image: '/placeholder.svg?text=HTML',
+    image: '/images/1024px-Old_HTML_Logo.svg.png',
     level: 'BEGINNER',
     category: 'Web Development'
   },
   {
     title: 'CSS',
     description: 'Learn to use CSS selectors and properties to style your HTML pages.',
-    image: '/placeholder.svg?text=CSS',
+    image: '/images/css-3-logo-AF06D75231-seeklogo.com.png',
     level: 'BEGINNER',
     category: 'Web Development'
   },
   {
     title: 'JavaScript',
     description: 'Learn variables, loops, functions, and events to start building interactive web apps.',
-    image: '/placeholder.svg?text=JavaScript',
+    image: '/images/JavaScript-Logo.png',
     level: 'BEGINNER',
     category: 'Web Development'
   },
   {
     title: 'SQL',
     description: 'Learn database basics, queries, calculations, and more to start managing data.',
-    image: '/placeholder.svg?text=SQL',
+    image: '/images/logo_sql.gif',
     level: 'BEGINNER',
     category: 'Data Science'
   }
@@ -75,11 +75,11 @@ export default function CoursesPage() {
             }}
           >
             <div className="bg-[#000044] border-4 border-[#FFD700] overflow-hidden transform group-hover:scale-105 transition-transform">
-              <div className="relative h-48">
+              <div className="relative h-48 flex items-center justify-center p-4">
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 pixelated"
+                  className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500 pixelated"
                 />
               </div>
 

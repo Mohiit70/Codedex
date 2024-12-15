@@ -9,21 +9,10 @@ export default function UnderConstructionPage() {
           🚧 UNDER CONSTRUCTION 🚧
         </h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+        <div className="max-w-xl mx-auto mb-8">
           <div className="relative" style={{paddingBottom: '75%'}}>
             <iframe 
               src="https://giphy.com/embed/hV1dkT2u1gqTUpKdKy" 
-              width="100%" 
-              height="100%" 
-              style={{position: 'absolute'}} 
-              frameBorder="0" 
-              className="giphy-embed" 
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="relative" style={{paddingBottom: '84%'}}>
-            <iframe 
-              src="https://giphy.com/embed/7uDtQm2jKdS0VGLg46" 
               width="100%" 
               height="100%" 
               style={{position: 'absolute'}} 
