@@ -1,23 +1,25 @@
-import Layout from '../components/Layout'
-import { Link } from 'react-router-dom'
-import MovingEmoji from '../components/MovingEmoji'
-import { useState, useEffect } from 'react'
+import Layout from '../components/Layout';
+import { Link } from 'react-router-dom';
+import MovingEmoji from '../components/MovingEmoji';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
   const [firePositions, setFirePositions] = useState([
     { left: '10%', top: '5%', size: 30 },
     { left: '80%', top: '15%', size: 40 },
     { left: '25%', top: '85%', size: 35 },
-    { left: '70%', top: '90%', size: 25 }
+    { left: '70%', top: '90%', size: 25 },
   ]);
 
   useEffect(() => {
     const animateFire = () => {
-      setFirePositions(prev => prev.map(fire => ({
-        ...fire,
-        left: `${Math.max(0, Math.min(100, parseFloat(fire.left) + (Math.random() * 4 - 2)))}%`,
-        top: `${Math.max(0, Math.min(100, parseFloat(fire.top) + (Math.random() * 4 - 2)))}%`
-      })));
+      setFirePositions((prev) =>
+        prev.map((fire) => ({
+          ...fire,
+          left: `${Math.max(0, Math.min(100, parseFloat(fire.left) + (Math.random() * 4 - 2)))}%`,
+          top: `${Math.max(0, Math.min(100, parseFloat(fire.top) + (Math.random() * 4 - 2)))}%`,
+        }))
+      );
     };
 
     const intervalId = setInterval(animateFire, 200);
@@ -27,7 +29,7 @@ export default function HomePage() {
   return (
     <Layout>
       {firePositions.map((fire, index) => (
-        <div 
+        <div
           key={index}
           className="fixed animate-fire z-0"
           style={{
@@ -39,7 +41,7 @@ export default function HomePage() {
             background: 'radial-gradient(circle, rgba(255,165,0,1) 0%, rgba(255,69,0,1) 50%, rgba(139,0,0,1) 100%)',
             borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
             filter: 'blur(3px)',
-            animation: 'flicker 0.1s infinite alternate'
+            animation: 'flicker 0.1s infinite alternate',
           }}
         />
       ))}
@@ -57,16 +59,30 @@ export default function HomePage() {
           Your Radical Coding Encyclopedia!
         </div>
 
-        <table width="100%" border={1} cellPadding={8} cellSpacing={0} className="bg-[#000044]">
+        <table
+          width="100%"
+          border={1}
+          cellPadding={8}
+          cellSpacing={0}
+          className="bg-[#000044]"
+        >
           <tbody>
             <tr>
               <td width="20%" valign="top" className="bg-[#000066]">
                 <div className="space-y-4">
                   <div className="bg-[#FF00FF] p-2 font-bold animate-blink">QUICK LINKS</div>
-                  <Link to="/html" className="block hover:text-yellow-300 no-underline">➡️ HTML Basics</Link>
-                  <Link to="/css" className="block hover:text-yellow-300 no-underline">➡️ CSS Tutorial</Link>
-                  <Link to="/javascript" className="block hover:text-yellow-300 no-underline">➡️ JS Workshop</Link>
-                  <Link to="/python" className="block hover:text-yellow-300 no-underline">➡️ Python Zone</Link>
+                  <Link to="/html" className="block hover:text-yellow-300 no-underline">
+                    ➡️ HTML Basics
+                  </Link>
+                  <Link to="/css" className="block hover:text-yellow-300 no-underline">
+                    ➡️ CSS Tutorial
+                  </Link>
+                  <Link to="/javascript" className="block hover:text-yellow-300 no-underline">
+                    ➡️ JS Workshop
+                  </Link>
+                  <Link to="/python" className="block hover:text-yellow-300 no-underline">
+                    ➡️ Python Zone
+                  </Link>
                 </div>
               </td>
               <td valign="top">
@@ -76,28 +92,27 @@ export default function HomePage() {
                       🌟 Welcome to the World of Code! 🌟
                     </h2>
                     <p>
-                      Get ready to embark on an AWESOME journey into the world of programming!
-                      Our radical tutorials will teach you everything you need to know about
-                      HTML, CSS, JavaScript, and Python!
+                      Get ready to embark on an AWESOME journey into the world of
+                      programming! Our radical tutorials will teach you everything you
+                      need to know about HTML, CSS, JavaScript, and Python!
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <Link to="/html" className="bg-[#000066] p-4 border border-[#FF00FF] hover:border-[#00FFFF] block no-underline">
+                    <Link
+                      to="/html"
+                      className="bg-[#000066] p-4 border border-[#FF00FF] hover:border-[#00FFFF] block no-underline"
+                    >
                       <h3 className="text-xl font-bold text-[#00FFFF] mb-2">HTML Zone 🌐</h3>
                       <p>Master the art of HTML! Learn tags, elements, and more!</p>
                     </Link>
-                    <Link to="/css" className="bg-[#000066] p-4 border border-[#FF00FF] hover:border-[#00FFFF] block no-underline">
+                    <Link
+                      to="/css"
+                      className="bg-[#000066] p-4 border border-[#FF00FF] hover:border-[#00FFFF] block no-underline"
+                    >
                       <h3 className="text-xl font-bold text-[#00FFFF] mb-2">CSS World 🎨</h3>
                       <p>Style your pages with awesome CSS tricks and tips!</p>
                     </Link>
-                  </div>
-
-                  <div className="bg-black p-2">
-                    <marquee scrollamount="3" className="text-[#00FFFF]">
-                      🔥 NEW TUTORIAL ALERT! Learn about the amazing {'<blink>'} tag! |
-                      💫 Master table layouts! | 🌟 Join our guestbook! | 🚀 Download our JavaScript games!
-                    </marquee>
                   </div>
                 </div>
               </td>
@@ -120,5 +135,5 @@ export default function HomePage() {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
